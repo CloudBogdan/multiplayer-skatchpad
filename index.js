@@ -5,7 +5,7 @@ const
     socketio = require("socket.io"),
     io = new socketio.Server().listen(server);
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 io.on("connection", socket=> {
     console.log(`User conntected ✔`);
