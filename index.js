@@ -28,4 +28,4 @@ app.get("/js/main.js", (req, res)=> {
     res.sendFile(__dirname + "/client/js/main.js");
 });
 
-server.listen(3000);
+server.listen(port);
