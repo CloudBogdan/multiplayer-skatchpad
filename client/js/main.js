@@ -15,24 +15,13 @@ socket.on("move", data=> {
 
     // Is online
     document.querySelector(".online-counter").innerText = `Online: ${ cursors.length }`;
-    
-    // Just a debug
-    // console.log(cursors.map(cursor=> cursor.id));
 
     // Draw
-    ctx.lineWidth = .5;
-    ctx.lineCap = "round";
-
     cursors.map(cursor=> {
         
         if (!cursor) return;
         
         ctx.fillRect(Math.round((cursor.x) / pixel_size) * pixel_size - pixel_size / 2, Math.round((cursor.y) / pixel_size) * pixel_size + 2, pixel_size, pixel_size);
-        // ctx.lineTo(cursor.x, cursor.y);
-        // ctx.stroke();
-
-        // ctx.beginPath();
-        // ctx.moveTo(cursor.x, cursor.y);
 
     });
 
@@ -49,7 +38,7 @@ socket.on("move", data=> {
     
 });
 
-onpointerdown = e=> {
+onpointerdown = ()=> {
     is_pressed = true;
 }
 onpointerup = ()=> {

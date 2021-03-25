@@ -10,11 +10,9 @@ const port = process.env.PORT || 3000;
 io.on("connection", socket=> {
     console.log(`User conntected ✔`);
 
-    socket.on("move", data=> {
-
-        io.emit("move", { id: socket.id, ...data });
-
-    })
+    socket.on("move", data=>
+        io.emit("move", { id: socket.id, ...data })
+    );
     
     socket.on("disconnect", ()=> {
         console.log("User disconntected ✖");
